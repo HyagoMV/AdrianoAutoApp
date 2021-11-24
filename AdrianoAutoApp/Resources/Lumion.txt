@@ -1,0 +1,3 @@
+#Lumion
+127.0.0.1 backup.lumion3d.net
+127.0.0.1 license.lumiontech.net
