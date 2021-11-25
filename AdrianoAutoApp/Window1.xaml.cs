@@ -14,13 +14,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace AdrianoAutoApp {
-  /// <summary>
-  /// Interaction logic for Window1.xaml
-  /// </summary>
+
+
   public partial class Window1 : Window {
+
+    private class Item {
+      public string Name { get; set; }
+      public string Category { get; set; }
+    }
+
     public Window1() {
-
-
       InitializeComponent();
 
       List<Item> items = new List<Item>();
@@ -36,6 +39,7 @@ namespace AdrianoAutoApp {
     }
 
     private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+      #region Carrega a logo do app de acordo como item selecionado
       switch (((Item) e.AddedItems[0]).Name) {
         case "Photoshop":
           imgProgram.Source = new BitmapImage(new Uri("pack://application:,,,/Images/photoshop.png"));
@@ -47,15 +51,17 @@ namespace AdrianoAutoApp {
           imgProgram.Source = new BitmapImage(new Uri("pack://application:,,,/Images/lumion.png"));
           break;
       }
+      #endregion
 
-      #region Desmarca os Checkbox para a próxima seleção
+      #region Reset nos controles
       cBoxHost.IsChecked = false;
       cBoxFirewall.IsChecked = false;
+      MSG.Visibility = Visibility.Hidden;
       #endregion
     }
 
-    #region Lógica do HOST
-    private void CheckBox_Checked(object sender, RoutedEventArgs e) {
+    private void CheckBoxHost_Checked(object sender, RoutedEventArgs e) {
+      #region Lógica do arquivo HOST
       switch (((Item) comboBox.Items.CurrentItem).Name) {
         case "Photoshop":
           HostLogic.ApplyLogic(HostLogic.PorgramSupport.ADOBLE_PHOTOSHOP);
@@ -67,12 +73,25 @@ namespace AdrianoAutoApp {
           HostLogic.ApplyLogic(HostLogic.PorgramSupport.LUMION);
           break;
       }
-    }
-    #endregion
-  }
+      #endregion
 
-  public class Item {
-    public string Name { get; set; }
-    public string Category { get; set; }
+      MSG.Visibility = Visibility.Visible;
+    }
+
+    private void CheckBoxFirewall_Checked(object sender, RoutedEventArgs e) {
+      System.Diagnostics.Process.Start( @"C:\WINDOWS\system32\wf.msc");
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e) {
+
+      MSG.Visibility = Visibility.Hidden;
+
+    }
+
+    private void Button_Click_1(object sender, RoutedEventArgs e) {
+      MSG.Visibility = Visibility.Hidden;
+        System.Diagnostics.Process.Start("explorer.exe", Environment
+      .GetFolderPath(Environment.SpecialFolder.Windows) + @"\System32\Drivers\Etc\Hosts");
+      }
   }
 }

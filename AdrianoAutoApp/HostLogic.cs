@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace AdrianoAutoApp {
   static class HostLogic {
 
-    static string hostFilePath = Environment.GetFolderPath(Environment.SpecialFolder.Windows) + @"\System32\Drivers\Etc\Hosts";
+    static string hostFilePath = Environment
+      .GetFolderPath(Environment.SpecialFolder.Windows) + @"\System32\Drivers\Etc\Hosts";
 
     public enum PorgramSupport {
       ADOBLE_PHOTOSHOP,

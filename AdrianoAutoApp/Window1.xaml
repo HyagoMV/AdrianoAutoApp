@@ -52,7 +52,7 @@
             <CheckBox
                 x:Name="cBoxHost"
                 Margin="261.701,4.901,18,7.04"
-                Checked="CheckBox_Checked"
+                Checked="CheckBoxHost_Checked"
                 Content="Block" />
         </GroupBox>
         <GroupBox
@@ -66,7 +66,30 @@
                 x:Name="cBoxFirewall"
                 Margin="265,6.901,14.701,5.04"
                 HorizontalAlignment="Center"
+                Checked="CheckBoxFirewall_Checked"
                 Content="Block" />
         </GroupBox>
+        <Grid
+            x:Name="MSG"
+            Margin="210,247,189,24"
+            Visibility="Visible">
+            <Label
+                Width="195"
+                Height="40"
+                Margin="35,52,57,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Content="              Abrir arquivo HOST" />
+            <Button
+                Width="100"
+                Height="25"
+                Margin="0,60,23,0"
+                Content="Sim" HorizontalAlignment="Right" Click="Button_Click_1" />
+            <Button
+                Width="100"
+                Height="25"
+                Margin="20,63,0,0"
+                Content="Nao" HorizontalAlignment="Left" Click="Button_Click" />
+        </Grid>
     </Grid>
 </Window>

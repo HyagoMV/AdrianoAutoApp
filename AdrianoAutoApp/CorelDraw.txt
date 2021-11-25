@@ -1,7 +1,0 @@
-﻿127.0.0.1 mc.corel.com
-127.0.0.1 apps.corel.com
-127.0.0.1 origin-mc.corel.com
-127.0.0.1 iws.corel.com
-127.0.0.1 compute-1.amazonaws.com  
-127.0.0.1 ipm.corel.com  
-127.0.0.1 dev1.ipm.corel.public.corel.net
