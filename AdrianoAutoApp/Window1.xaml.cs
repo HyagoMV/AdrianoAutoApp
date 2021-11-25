@@ -27,6 +27,7 @@ namespace AdrianoAutoApp {
       InitializeComponent();
 
       List<Item> items = new List<Item>();
+      items.Add(new Item() { Name = "---Selecione---" });
       items.Add(new Item() { Name = "Photoshop", Category = "Adobe" });
       items.Add(new Item() { Name = "CorelDRAW", Category = "Corel" });
       items.Add(new Item() { Name = "Lumion", Category = "Lumion" });
@@ -65,17 +66,20 @@ namespace AdrianoAutoApp {
       switch (((Item) comboBox.Items.CurrentItem).Name) {
         case "Photoshop":
           HostLogic.ApplyLogic(HostLogic.PorgramSupport.ADOBLE_PHOTOSHOP);
+          MSG.Visibility = Visibility.Visible;
           break;
         case "CorelDRAW":
           HostLogic.ApplyLogic(HostLogic.PorgramSupport.COREL_DRAW);
+          MSG.Visibility = Visibility.Visible;
           break;
         case "Lumion":
           HostLogic.ApplyLogic(HostLogic.PorgramSupport.LUMION);
+          MSG.Visibility = Visibility.Visible;
           break;
       }
       #endregion
 
-      MSG.Visibility = Visibility.Visible;
+      
     }
 
     private void CheckBoxFirewall_Checked(object sender, RoutedEventArgs e) {

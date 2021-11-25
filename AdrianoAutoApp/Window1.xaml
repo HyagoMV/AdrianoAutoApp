@@ -84,12 +84,16 @@
                 Width="100"
                 Height="25"
                 Margin="0,60,23,0"
-                Content="Sim" HorizontalAlignment="Right" Click="Button_Click_1" />
+                HorizontalAlignment="Right"
+                Click="Button_Click_1"
+                Content="Sim" />
             <Button
                 Width="100"
                 Height="25"
                 Margin="20,63,0,0"
-                Content="Nao" HorizontalAlignment="Left" Click="Button_Click" />
+                HorizontalAlignment="Left"
+                Click="Button_Click"
+                Content="Nao" />
         </Grid>
     </Grid>
 </Window>
